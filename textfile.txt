@@ -1,0 +1,7 @@
+this is some text
+
+another new data is added in txt file
+file is modified
+
+file is again modified
+
