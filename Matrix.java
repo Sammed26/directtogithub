@@ -101,10 +101,11 @@ public class MatrixMethods
 			{
 				for(int k = 0; k<rows; k++)
 				{
-					result[i][j] = (m1[i][k] * m2[k][i]) + result[i][j];
+					result[i][j] += (m1[i][k] * m2[k][j]);
 				}
 			}
 		}
+		System.out.println("multiplication of matrix");
 		displayMatrix(result, rows, columns);
 	}
 
