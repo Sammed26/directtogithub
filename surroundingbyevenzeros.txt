@@ -1,1 +1,126 @@
+import java.util.Scanner;
+
+public class SurroundingEvenOdd
+{
+		
+
+	public static void main(String[] args)
+	{
+		Scanner scn = new Scanner(System.in);
+
+		int [][] matrix = new int[3][3];
+
+		System.out.println("enter values 0 or 1");
+		
+		for(int i = 0; i<3; i++)
+		{
+			for(int j = 0; j<3; j++)
+			{
+				matrix[i][j] = scn.nextInt();
+			}
+		} 
+
+		for(int i = 0; i<3; i++)
+		{
+			for(int j = 0; j<3; j++)
+			{
+				System.out.print(matrix[i][j]);
+			}
+		System.out.println();
+		} 
+		
+		Method obj = new Method();
+		int result = obj.surroundedCount(matrix, 3, 3);
+
+		System.out.println("elements surrounded by even zero's are " + result);
+	}
+}
+
+
+class Method
+{
+	int surroundedCount(int matrix[][], int rows, int columns)
+	{
+		int result = 0;
+		int count = 0;
+		for(int i = 0; i<rows; i++)
+		{
+			for(int j = 0; j<columns; j++)
+			{
+				
+				if((i-1 >= 0) && (j-1 >= 0) && (i-1 < 3) && (j-1 < 3))
+				{
+					if(matrix[i-1][j-1] == 0)
+					{
+						count++;
+					}
+				}
+				if((i+1 >= 0) && (j+1 >= 0) && (i+1 < 3) && (j+1 < 3))
+				{
+					if(matrix[i+1][j+1] == 0)
+					{
+						count++;
+					}
+				}
+				if((i+1 >= 0) && (j-1 >= 0) && (i+1 < 3) && (j-1 < 3))
+				{
+					if(matrix[i+1][j-1] == 0)
+					{
+						count++;
+					}
+				}
+				if((i-1 >= 0) && (j+1 >= 0) && (i-1 < 3) && (j+1 < 3))
+				{
+					if(matrix[i-1][j+1] == 0)
+					{
+						count++;
+					}
+				}
+				if((i-1 >= 0) && (j >= 0) && (i-1 < 3) && (j < 3))
+				{
+					if(matrix[i-1][j] == 0)
+					{
+						count++;
+					}
+				}
+				if((i >= 0) && (j-1 >= 0) && (i < 3) && (j-1 < 3))
+				{
+					if(matrix[i][j-1] == 0)
+					{
+						count++;
+					}
+				}
+				if((i+1 >= 0) && (j >= 0) && (i+1 < 3) && (j < 3))
+				{
+					if(matrix[i+1][j] == 0)
+					{
+						count++;
+					}
+				}
+				if((i >= 0) && (j+1 >= 0) && (i < 3) && (j+1 < 3))
+				{
+					if(matrix[i][j+1] == 0)
+					{
+						count++;
+					}
+				}
+
+				if(count%2 == 0 && count != 0)
+				{
+					result++;
+				}
+				
+			}
+			count = 0;
+		}	
+		
+		return result;			
+	}	
+}
+
+
+
+
+
+
 
