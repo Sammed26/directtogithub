@@ -30,6 +30,7 @@ int main(){
 
     int n;
     cout<<"enter size of array"<<endl;
+    cin>>n;
 
     int array[n];
     cout<<"enter array"<<endl;
